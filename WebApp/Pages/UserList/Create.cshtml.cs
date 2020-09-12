@@ -6,17 +6,26 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WebApp.Models;
 
-namespace WebApp.Pages.Users
+namespace WebApp.Pages.UserList
 {
-    public class IndexModel : PageModel
+    public class CreateModel : PageModel
     {
         public AppDbContext db = new AppDbContext();
 
-        public List<User> Users { get; set; }
+        [BindProperty]
+        public User User { get; set; }
 
         public void OnGet()
         {
-            Users = db.Users.ToList();
+
+        }
+
+        public IActionResult OnPost()
+        {
+            db.Users.Add(User);
+            db.SaveChanges();
+
+            return RedirectToPage("Index");
         }
     }
 }

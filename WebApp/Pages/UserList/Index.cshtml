@@ -6,10 +6,10 @@
 
 <h1>Users</h1>
 
-<table class="table table-bordered">
+<table class="table table-bordered" style="width: 500px">
     <tr>
-        <td><label asp-for="Users.First().Name"></label></td>
-        <td><label asp-for="Users.First().Surname"></label></td>
+        <th><label asp-for="Users.First().Name"></label></th>
+        <th><label asp-for="Users.First().Surname"></label></th>
     </tr>
     @foreach (Models.User u in Model.Users)
     {
