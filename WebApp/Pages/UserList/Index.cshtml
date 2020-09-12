@@ -1,0 +1,22 @@
+﻿@page
+@model WebApp.Pages.Users.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Users</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <td><label asp-for="Users.First().Name"></label></td>
+        <td><label asp-for="Users.First().Surname"></label></td>
+    </tr>
+    @foreach (Models.User u in Model.Users)
+    {
+        <tr>
+            <td>@u.Name</td>
+            <td>@u.Surname</td>
+        </tr>
+    }
+</table>
+
