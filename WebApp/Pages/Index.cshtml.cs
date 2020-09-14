@@ -17,7 +17,7 @@ namespace WebApp.Pages
         {
             if (Text == null)
             {
-                Text = "Привет, друг!!!";
+                Text = "Привет, друг!";
             }
         }
 
